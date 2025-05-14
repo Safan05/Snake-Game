@@ -1,0 +1,50 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Game Development\\SnakeGame\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E622917E-6AE3-44F9-AB2F-E9AA3978D15B}|SnakeGame\\SnakeGame.vcxproj|D:\\Game Development\\SnakeGame\\SnakeGame\\SnakeGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{E622917E-6AE3-44F9-AB2F-E9AA3978D15B}|SnakeGame\\SnakeGame.vcxproj|solutionrelative:SnakeGame\\SnakeGame.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\include\\cmath||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "cmath",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\include\\cmath",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\include\\cmath",
+              "ViewState": "AgIAACgCAAAAAAAAAAAYwDUCAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-05-14T17:21:47.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SnakeGame.cpp",
+              "DocumentMoniker": "D:\\Game Development\\SnakeGame\\SnakeGame\\SnakeGame.cpp",
+              "RelativeDocumentMoniker": "SnakeGame\\SnakeGame.cpp",
+              "ToolTip": "D:\\Game Development\\SnakeGame\\SnakeGame\\SnakeGame.cpp",
+              "RelativeToolTip": "SnakeGame\\SnakeGame.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-05-14T17:11:11.344Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
