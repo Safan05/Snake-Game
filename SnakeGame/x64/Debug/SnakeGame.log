@@ -1,2 +1,4 @@
 ﻿  SnakeGame.cpp
+D:\Game Development\SnakeGame\SnakeGame\SnakeGame.cpp(88,62): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Game Development\SnakeGame\SnakeGame\SnakeGame.cpp(88,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SnakeGame.vcxproj -> D:\Game Development\SnakeGame\x64\Debug\SnakeGame.exe
