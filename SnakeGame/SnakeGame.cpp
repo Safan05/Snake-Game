@@ -5,7 +5,10 @@ const int Width = 800;
 const int Height = 600;
 const int Grid = 20;  // block size
 const int maxSize = 100;
-int num = 10;
+int num = 4;
+int speed = 1;
+int score = 0;
+float delay = 0.1f;
 char dir;
 using namespace sf;
 
@@ -14,7 +17,7 @@ struct Snake {
     int y;
 } snake[maxSize];
 
-struct food {
+struct Food {
     int x;
     int y;
 } fruit;
@@ -23,24 +26,42 @@ void gameloop(RenderWindow& window) {
     for (int i = num-1; i > 0; i--) {
         snake[i] = snake[i - 1];
     }
-    if (dir == 'd') snake[0].y += 1;
-    if (dir == 'l') snake[0].x -= 1;
-    if (dir == 'r') snake[0].x += 1;
-    if (dir == 'u') snake[0].y -= 1;
+
+    if (dir == 'd') snake[0].y += speed;
+    if (dir == 'l') snake[0].x -= speed;
+    if (dir == 'r') snake[0].x += speed;
+    if (dir == 'u') snake[0].y -= speed;
     // check eating fruit
     if (snake[0].x == fruit.x && snake[0].y == fruit.y) {
         num++;
-        fruit.x = rand() % Width; 
-        fruit.y = rand() % Height;
+        score++;
+        if ((score % 7 == 0) && delay > 0.03f) {
+            delay -= 0.01f;  
+        }
+        fruit.x = rand() % (Width / Grid);
+        fruit.y = rand() % (Height / Grid);
     }
     // Check wall collisions
-    if (snake[0].x < 0 || snake[0].x >= Width / Grid || snake[0].y < 0 || snake[0].y >= Height / Grid)
-        window.close();  // or reset game
-
+    if (snake[0].x < 0) {
+        snake[0].x = (Width / Grid)-1;
+        dir = 'l';
+    }
+    if (snake[0].x >= Width / Grid) {
+        snake[0].x =  0;
+        dir = 'r';
+    }
+    if (snake[0].y < 0) {
+        snake[0].y = (Height / Grid)-1;
+        dir = 'u';
+    }
+    if (snake[0].y >= Height / Grid) {
+        snake[0].y = 0;
+        dir = 'd';
+    }
     // Check self collision
     for (int i = 1; i < num; i++) {
         if (snake[0].x == snake[i].x && snake[0].y == snake[i].y)
-            window.close();  // or reset game
+            int z = 9;
     }
 }
 int main() {
@@ -48,15 +69,20 @@ int main() {
     // r --> right , l--> left , u--> up , d--> down
     dir = 'r';
     Clock clk;
-    float timer = 0, delay = 0.1f;
+    float timer = 0;
     Texture t1, t2;
-   // t1.loadFromFile("images/white.png");
+    fruit.x = rand() % (Width/Grid);
+    fruit.y = rand() % (Height/Grid);
+    if (!t1.loadFromFile("white.png")) {
+        std::cerr << "Error loading white.png. Make sure it's in the same directory.\n";
+        return -1;
+    }
     if (!t2.loadFromFile("green.png")) {
         std::cerr << "Error loading green.png. Make sure it's in the same directory.\n";
         return -1;
     }
 
-  //  Sprite sprite1(t1);
+    Sprite food(t1);
     Sprite player(t2);
     int startX = 15;
     for (int i = 0; i < num; i++) {
@@ -88,6 +114,8 @@ int main() {
             player.setPosition(snake[i].x * Grid, snake[i].y * Grid);  
             window.draw(player);
         }
+        food.setPosition(fruit.x*Grid,fruit.y*Grid);
+        window.draw(food);
         window.display();
     }
 
